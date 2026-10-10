@@ -1,53 +1,97 @@
-Iris Dataset Analysis
+# Iris Dataset Analysis
 
-Project Overview
+## Project Overview
 
-This project analyzes the Iris dataset using Python and Pandas. It explores the dataset, performs statistical analysis, filters rows, and exports results to CSV files.
+This project explores the Iris flower dataset using Python, Pandas, and Matplotlib. It focuses on data exploration, data quality checks, statistical analysis, filtering, visualization, and exporting results to CSV files.
 
-Requirements
+## Objectives
 
-Python
+- Explore the dataset structure and data types.
+- Check for missing values and duplicate records.
+- Calculate descriptive statistics for flower measurements.
+- Compare measurements across the three Iris species.
+- Filter records using measurement-based conditions.
+- Visualize average petal length by species.
+- Export analysis results for further use.
 
-Pandas
+## Dataset
 
-Jupyter Notebook
+The dataset is stored in `data/iris.csv` and contains measurements for three Iris species:
 
-Matplotlib
+- `setosa`
+- `versicolor`
+- `virginica`
 
-How to Run
+The measurement columns are `sepal_length`, `sepal_width`, `petal_length`, and `petal_width`.
 
-Open the project folder.
+## Project Structure
 
-Activate the project environment.
+```text
+iris-analysis/
+├── data/
+│   └── iris.csv
+├── output/
+│   ├── species_summary.csv
+│   └── filtered_iris.csv
+├── iris_analysis.ipynb
+├── pyproject.toml
+├── uv.lock
+├── .gitignore
+└── README.md
+```
 
-Run the notebook iris_analysis.ipynb from top to bottom.
+## Technologies Used
 
-Analysis
+- Python
+- Pandas
+- Matplotlib
+- Jupyter Notebook
+- uv for project and dependency management
 
-Display the first and last rows.
+## Setup and Installation
 
-Check dataset dimensions, columns, and data types.
+### 1. Install the dependencies
 
-Check missing values and duplicate rows.
+Make sure Python and uv are installed. Open a terminal in the project directory and run:
 
-Count observations by species.
+```bash
+uv sync
+```
 
-Calculate descriptive statistics and average measurements by species.
+### 2. Start Jupyter Notebook
 
-Filter records based on sepal and petal measurements.
+```bash
+uv run jupyter notebook
+```
 
-Compare average petal length across species using a line chart.
+Open `iris_analysis.ipynb` and run the cells from top to bottom.
 
-Output Files
+## Analysis Workflow
 
-output/species_summary.csv
+1. Load the dataset into a Pandas DataFrame.
+2. Inspect the first and last rows, dataset dimensions, and column types.
+3. Check missing values and duplicate records.
+4. Explore species counts and descriptive statistics.
+5. Calculate average measurements by species.
+6. Filter flowers based on measurement conditions.
+7. Visualize average petal length across species.
+8. Export the summary and filtered records to CSV files.
 
-output/filtered_iris.csv
+## Output Files
 
-Findings
+| File | Description |
+|---|---|
+| `output/species_summary.csv` | Summary of average measurements and sample counts by species |
+| `output/filtered_iris.csv` | Records where `sepal_length > 6` |
 
-The Iris dataset contains three species: setosa, versicolor, and virginica. Their flower measurements differ, and virginica generally has the highest average petal length while setosa has the lowest.
+## Key Findings
 
-Dataset
+The analysis compares the measurements of the three Iris species. The average petal length is highest for `virginica` and lowest for `setosa`.
 
-The source dataset is stored in data/iris.csv.
+## Reproducibility
+
+Run the notebook cells in order to reproduce the analysis and regenerate the output files. The project dependencies are managed through `pyproject.toml` and `uv.lock`.
+
+## Author
+
+Hisham Ahmed Jafri
